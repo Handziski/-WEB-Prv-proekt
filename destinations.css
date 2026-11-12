@@ -1,0 +1,65 @@
+.hero.small { padding: 40px max(20px, calc((100% - 1100px) / 2)); }
+.hero.small h1 { font-size: 2.1rem; margin-bottom: 6px; }
+
+/* Филтри */
+.filters {
+  display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end;
+  padding: 18px 22px; margin-bottom: 28px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+}
+.filters > div { min-width: 200px; }
+.filters .count { margin-left: auto; min-width: 0; font-size: .9rem; color: var(--muted); }
+.filters input[type=range] { width: 100%; accent-color: var(--primary); }
+.filters output { color: var(--primary); font-weight: 700; }
+
+/* Полиња */
+label { display: block; margin: 14px 0 6px; font-size: .9rem; font-weight: 700; color: var(--ink); }
+.filters label { margin-top: 0; }
+input[type=text], input[type=number], input[type=email], select {
+  width: 100%; padding: 11px 14px;
+  border: 1.5px solid var(--line); border-radius: 10px;
+  background: #fff; color: var(--ink);
+  font-size: 1rem; font-family: var(--font);
+}
+input::placeholder { color: #9aa7b4; }
+input:focus, select:focus { border-color: var(--primary); }
+input:focus-visible, select:focus-visible, button:focus-visible {
+  outline: 3px solid rgba(36, 87, 214, .35); outline-offset: 2px;
+}
+
+/* Картички – копчиња */
+.card-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn-more, .btn-delete { border: 0; cursor: pointer; font-family: var(--font); }
+.btn-delete {
+  padding: 9px 18px; border-radius: 8px;
+  background: transparent; color: var(--danger); border: 1.5px solid var(--danger);
+  font-size: .9rem; font-weight: 700;
+}
+.btn-delete:hover { background: var(--danger); color: #fff; }
+.empty { text-align: center; padding: 30px; color: var(--muted); }
+
+/* Панели */
+.panels { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px; }
+.panel {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 26px;
+}
+.panel h2 { font-size: 1.35rem; margin-bottom: 4px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.btn-primary {
+  margin-top: 20px; width: 100%; padding: 13px; border: 0; border-radius: 8px;
+  background: var(--primary); color: #fff;
+  font-size: 1rem; font-weight: 700; cursor: pointer; font-family: var(--font);
+}
+.btn-primary:hover { background: var(--primary-dark); }
+.result { margin-top: 14px; font-size: .95rem; line-height: 1.7; }
+.result.ok { color: var(--ok); }
+.result.err { color: var(--danger); }
+.result .total {
+  display: inline-block; margin-top: 4px; padding: 4px 14px; border-radius: 8px;
+  background: var(--sun); color: var(--sun-ink); font-size: 1.15rem; font-weight: 800;
+}
+
+@media (max-width: 780px) {
+  .panels { grid-template-columns: 1fr; }
+  .filters .count { margin-left: 0; }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Патни планови – Блог</title>
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="destinations.css">
+<link rel="stylesheet" href="blog.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">Патни планови</a>
+  <nav>
+    <a href="index.html">Почетна</a>
+    <a href="destinations.html">Дестинации</a>
+    <a href="gallery.html">Галерија</a>
+    <a href="blog.html" class="active">Блог</a>
+    <a href="survey.html">Анкета</a>
+  </nav>
+  <a href="login.html" class="btn-login">Најави се</a>
+</header>
+
+<section class="hero small">
+  <h1>Блог и водич</h1>
+  <p>Статии, совети и 10 работи кои мора да ги видите во секој град.</p>
+</section>
+
+<main class="container">
+  <section id="list">
+    <div class="tabs" id="tabs" role="group" aria-label="Филтер по тип"></div>
+    <div class="cities" id="articles"></div>
+  </section>
+
+  <article id="article" class="article" hidden>
+    <a href="blog.html" class="back" id="back">← Назад кон блогот</a>
+    <span class="badge" id="aTag"></span>
+    <h2 id="aTitle"></h2>
+    <p class="lead" id="aIntro"></p>
+    <ol class="top10" id="aItems"></ol>
+    <div id="aText"></div>
+    <div class="a-links" id="aLinks"></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <strong>Патни планови</strong>
+      <p>Веб портал за планирање на патувања и истражување на дестинации.</p>
+    </div>
+    <div>
+      <strong>Страници</strong>
+      <a href="destinations.html">Дестинации</a>
+      <a href="gallery.html">Галерија</a>
+      <a href="blog.html">Блог</a>
+      <a href="survey.html">Анкета</a>
+    </div>
+    <div>
+      <strong>Контакт</strong>
+      <p>info@patniplanovi.mk</p>
+      <p>Скопје, Македонија</p>
+    </div>
+  </div>
+  <p class="copy">© 2026 Патни планови. Сите права се задржани.</p>
+</footer>
+
+<script src="blog-data.js"></script>
+<script src="blog.js"></script>
+</body>
+</html>

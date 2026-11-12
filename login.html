@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Најава – Патни планови</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <section class="ticket">
+      <h1>Планирај го следното патување</h1>
+      <p>Најави се за да ги видиш твоите дестинации, датуми и пакување на едно место.</p>
+      <div class="route">Скопје → Охрид<span>Следна дестинација: твоја по избор</span></div>
+    </section>
+
+    <form id="loginForm" novalidate>
+      <h2>Најава</h2>
+
+      <label for="email">Е-пошта</label>
+      <input type="email" id="email" name="email" autocomplete="email" placeholder="ime@primer.mk">
+      <div class="error" id="emailErr"></div>
+
+      <label for="password">Лозинка</label>
+      <div class="pass-row">
+        <input type="password" id="password" name="password" autocomplete="current-password">
+        <button type="button" id="toggle">Прикажи</button>
+      </div>
+      <div class="error" id="passErr"></div>
+
+      <div class="opts">
+        <label><input type="checkbox" id="remember"> Запомни ме</label>
+        <a href="#">Ја заборави лозинката?</a>
+      </div>
+
+      <button type="submit" class="submit">Најави се</button>
+      <div class="msg" id="msg" role="status"></div>
+
+      <p class="signup">Немаш профил? <a href="register.html">Регистрирај се</a></p>
+    </form>
+  </main>
+
+<script src="auth.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

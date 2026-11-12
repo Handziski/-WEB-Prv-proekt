@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Патни планови – Анкета</title>
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="destinations.css">
+<link rel="stylesheet" href="survey.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">Патни планови</a>
+  <nav>
+    <a href="index.html">Почетна</a>
+    <a href="destinations.html">Дестинации</a>
+    <a href="gallery.html">Галерија</a>
+    <a href="blog.html">Блог</a>
+    <a href="survey.html" class="active">Анкета</a>
+  </nav>
+  <a href="login.html" class="btn-login">Најави се</a>
+</header>
+
+<section class="hero small">
+  <h1>Анкета</h1>
+  <p>Кажи ни какви се твоите впечатоци од сајтот. Одговарањето трае помалку од две минути.</p>
+</section>
+
+<main class="container narrow">
+
+  <form id="surveyForm" class="panel" novalidate>
+
+    <div class="row">
+      <div>
+        <label for="sName">Име</label>
+        <input type="text" id="sName" maxlength="40" autocomplete="given-name">
+        <div class="error" id="sNameErr"></div>
+      </div>
+      <div>
+        <label for="sAge">Возраст</label>
+        <input type="number" id="sAge" min="10" max="99">
+        <div class="error" id="sAgeErr"></div>
+      </div>
+    </div>
+
+    <label for="sEmail">Е-пошта (незадолжително)</label>
+    <input type="email" id="sEmail" autocomplete="email" placeholder="ime@primer.mk">
+    <div class="error" id="sEmailErr"></div>
+
+    <label for="sSource">Како дозна за сајтот?</label>
+    <select id="sSource">
+      <option value="">— избери —</option>
+      <option>Пребарувач (Google)</option>
+      <option>Социјални мрежи</option>
+      <option>Препорака од пријател</option>
+      <option>Од наставник или училиште</option>
+      <option>Друго</option>
+    </select>
+    <div class="error" id="sSourceErr"></div>
+
+    <fieldset>
+      <legend>Кои страници ги посети?</legend>
+      <div class="opts">
+        <label class="opt"><input type="checkbox" name="pages" value="Дестинации"> Дестинации</label>
+        <label class="opt"><input type="checkbox" name="pages" value="Галерија"> Галерија</label>
+        <label class="opt"><input type="checkbox" name="pages" value="Блог"> Блог</label>
+        <label class="opt"><input type="checkbox" name="pages" value="Калкулатор"> Пресметка на трошоци</label>
+      </div>
+      <div class="error" id="sPagesErr"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Како ти се допаѓа изгледот на сајтот?</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="design" value="1"> 1</label>
+        <label class="opt"><input type="radio" name="design" value="2"> 2</label>
+        <label class="opt"><input type="radio" name="design" value="3"> 3</label>
+        <label class="opt"><input type="radio" name="design" value="4"> 4</label>
+        <label class="opt"><input type="radio" name="design" value="5"> 5</label>
+      </div>
+      <p class="hint">1 = воопшто не ми се допаѓа, 5 = многу ми се допаѓа</p>
+      <div class="error" id="sDesignErr"></div>
+    </fieldset>
+
+    <label for="sEase">Колку е лесно да се користи сајтот? <output id="sEaseOut">5</output> / 10</label>
+    <input type="range" id="sEase" min="1" max="10" value="5">
+
+    <fieldset>
+      <legend>Дали би го препорачал сајтот на пријател?</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="recommend" value="Да"> Да</label>
+        <label class="opt"><input type="radio" name="recommend" value="Можеби"> Можеби</label>
+        <label class="opt"><input type="radio" name="recommend" value="Не"> Не</label>
+      </div>
+      <div class="error" id="sRecommendErr"></div>
+    </fieldset>
+
+    <label for="sComment">Што да подобриме? (незадолжително)</label>
+    <textarea id="sComment" rows="4" maxlength="500"></textarea>
+    <div class="hint"><span id="sCount">0</span> / 500</div>
+
+    <button type="submit" class="btn-primary">Испрати одговори</button>
+  </form>
+
+  <section id="thanks" class="panel" hidden>
+    <h2>Благодариме, <span id="tName"></span>!</h2>
+    <p>Твоите одговори се зачувани:</p>
+    <dl class="summary" id="tSummary"></dl>
+
+    <h3>Резултати досега</h3>
+    <p id="tStats"></p>
+
+    <button type="button" class="btn-primary" id="again">Пополни повторно</button>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <strong>Патни планови</strong>
+      <p>Веб портал за планирање на патувања и истражување на дестинации.</p>
+    </div>
+    <div>
+      <strong>Страници</strong>
+      <a href="destinations.html">Дестинации</a>
+      <a href="gallery.html">Галерија</a>
+      <a href="blog.html">Блог</a>
+      <a href="survey.html">Анкета</a>
+    </div>
+    <div>
+      <strong>Контакт</strong>
+      <p>info@patniplanovi.mk</p>
+      <p>Скопје, Македонија</p>
+    </div>
+  </div>
+  <p class="copy">© 2026 Патни планови. Сите права се задржани.</p>
+</footer>
+
+<script src="survey.js"></script>
+</body>
+</html>

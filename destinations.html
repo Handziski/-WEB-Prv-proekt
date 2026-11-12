@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Патни планови – Дестинации</title>
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="destinations.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">Патни планови</a>
+  <nav>
+    <a href="index.html">Почетна</a>
+    <a href="destinations.html" class="active">Дестинации</a>
+    <a href="gallery.html">Галерија</a>
+    <a href="blog.html">Блог</a>
+    <a href="survey.html">Анкета</a>
+  </nav>
+  <a href="login.html" class="btn-login">Најави се</a>
+</header>
+
+<section class="hero small">
+  <h1>Дестинации</h1>
+  <p>Филтрирај по буџет и категорија, додај нови места и пресметај колку чини патувањето.</p>
+</section>
+
+<main class="container">
+
+  <section class="filters" aria-label="Филтри">
+    <div>
+      <label for="filterCategory">Категорија</label>
+      <select id="filterCategory"></select>
+    </div>
+    <div>
+      <label for="filterBudget">Буџет: до <output id="budgetValue">300</output> € / ден</label>
+      <input type="range" id="filterBudget" min="0" max="300" step="5" value="300">
+    </div>
+    <div class="count" id="count"></div>
+  </section>
+
+  <div class="cities" id="cities"></div>
+  <p class="empty" id="empty" hidden>Нема дестинации за избраните филтри. Зголеми го буџетот или смени ја категоријата.</p>
+
+  <div class="panels">
+    <section class="panel">
+      <h2>Пресметка на патни трошоци</h2>
+      <form id="calcForm">
+        <label for="calcDest">Дестинација</label>
+        <select id="calcDest"></select>
+
+        <div class="row">
+          <div>
+            <label for="calcDays">Број на денови</label>
+            <input type="number" id="calcDays" min="1" value="3">
+          </div>
+          <div>
+            <label for="calcPeople">Број на патници</label>
+            <input type="number" id="calcPeople" min="1" value="2">
+          </div>
+        </div>
+
+        <label for="calcTransport">Превоз по лице (€)</label>
+        <input type="number" id="calcTransport" min="0" value="0">
+
+        <button type="submit" class="btn-primary">Пресметај</button>
+        <div class="result" id="calcResult" role="status"></div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Додај нова дестинација</h2>
+      <form id="addForm" novalidate>
+        <div class="row">
+          <div>
+            <label for="newName">Град</label>
+            <input type="text" id="newName">
+          </div>
+          <div>
+            <label for="newCountry">Држава</label>
+            <input type="text" id="newCountry">
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="newCategory">Категорија</label>
+            <select id="newCategory"></select>
+          </div>
+          <div>
+            <label for="newPrice">Цена на ден (€)</label>
+            <input type="number" id="newPrice" min="1">
+          </div>
+        </div>
+
+        <label for="newText">Краток опис</label>
+        <input type="text" id="newText" maxlength="120">
+
+        <button type="submit" class="btn-primary">Додади</button>
+        <div class="result" id="addMsg" role="status"></div>
+      </form>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <strong>Патни планови</strong>
+      <p>Веб портал за планирање на патувања и истражување на дестинации.</p>
+    </div>
+    <div>
+      <strong>Страници</strong>
+      <a href="destinations.html">Дестинации</a>
+      <a href="gallery.html">Галерија</a>
+      <a href="blog.html">Блог</a>
+      <a href="survey.html">Анкета</a>
+    </div>
+    <div>
+      <strong>Контакт</strong>
+      <p>info@patniplanovi.mk</p>
+      <p>Скопје, Македонија</p>
+    </div>
+  </div>
+  <p class="copy">© 2026 Патни планови. Сите права се задржани.</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="destinations.js"></script>
+</body>
+</html>

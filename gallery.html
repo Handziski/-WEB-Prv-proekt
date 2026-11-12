@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Патни планови – Галерија</title>
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="destinations.css">
+<link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">Патни планови</a>
+  <nav>
+    <a href="index.html">Почетна</a>
+    <a href="destinations.html">Дестинации</a>
+    <a href="gallery.html" class="active">Галерија</a>
+    <a href="blog.html">Блог</a>
+    <a href="survey.html">Анкета</a>
+  </nav>
+  <a href="login.html" class="btn-login">Најави се</a>
+</header>
+
+<section class="hero small">
+  <h1>Галерија</h1>
+  <p>Отвори град за да видиш повеќе слики, да оставиш коментар и да гласаш.</p>
+</section>
+
+<main class="container">
+  <div class="cities" id="cities"></div>
+</main>
+
+<dialog id="viewer" aria-labelledby="vTitle">
+  <div class="v-head">
+    <h2 id="vTitle"></h2>
+    <button type="button" id="vClose" class="v-close" aria-label="Затвори">Затвори</button>
+  </div>
+
+  <div class="v-stage">
+    <button type="button" id="vPrev" class="v-nav" aria-label="Претходна слика">‹</button>
+    <img id="vImage" alt="">
+    <button type="button" id="vNext" class="v-nav" aria-label="Следна слика">›</button>
+  </div>
+  <div class="v-thumbs" id="vThumbs"></div>
+
+  <div class="v-votes">
+    <button type="button" id="btnLike" class="vote">Like <span id="likeCount">0</span></button>
+    <button type="button" id="btnDislike" class="vote">Dislike <span id="dislikeCount">0</span></button>
+  </div>
+
+  <h3>Коментари (<span id="commentCount">0</span>)</h3>
+  <form id="commentForm" novalidate>
+    <div class="row">
+      <div>
+        <label for="cName">Име</label>
+        <input type="text" id="cName" maxlength="30" placeholder="Гостин">
+      </div>
+      <div>
+        <label for="cText">Коментар</label>
+        <input type="text" id="cText" maxlength="300">
+      </div>
+    </div>
+    <button type="submit" class="btn-primary">Објави коментар</button>
+    <div class="result" id="cMsg" role="status"></div>
+  </form>
+  <ul class="comments" id="comments"></ul>
+</dialog>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <strong>Патни планови</strong>
+      <p>Веб портал за планирање на патувања и истражување на дестинации.</p>
+    </div>
+    <div>
+      <strong>Страници</strong>
+      <a href="destinations.html">Дестинации</a>
+      <a href="gallery.html">Галерија</a>
+      <a href="blog.html">Блог</a>
+      <a href="survey.html">Анкета</a>
+    </div>
+    <div>
+      <strong>Контакт</strong>
+      <p>info@patniplanovi.mk</p>
+      <p>Скопје, Македонија</p>
+    </div>
+  </div>
+  <p class="copy">© 2026 Патни планови. Сите права се задржани.</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="gallery.js"></script>
+</body>
+</html>
